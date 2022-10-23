@@ -1,15 +1,16 @@
-import yayJpg from '../assets/yay.jpg';
+import './style.less';
 
 export default function HomePage() {
   return (
-    <div>
-      <h2>Yay! Welcome to umi!</h2>
-      <p>
-        <img src={yayJpg} width="388" />
-      </p>
-      <p>
-        To get started, edit <code>pages/index.tsx</code> and save to reload.
-      </p>
+    <div className="page">
+      <div className="header">
+        <div className="title">
+          2022年度销售总览
+        </div>
+        <div className="title-bottom">
+          <div className="bottom-siderbar"></div>
+        </div>
+      </div>
     </div>
   );
 }
