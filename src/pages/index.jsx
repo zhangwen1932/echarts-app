@@ -1,4 +1,7 @@
+import CurrentMonth from '../components/CurrentMonth';
+import 'antd/dist/antd.css'
 import './style.less';
+
 
 export default function HomePage() {
   return (
@@ -10,6 +13,15 @@ export default function HomePage() {
         <div className="title-bottom">
           <div className="bottom-siderbar"></div>
         </div>
+      </div>
+      <div className='content flex'>
+        <div className='w-1/4'>
+          {/* 当前月销售额 */}
+          <div>
+            <CurrentMonth />
+          </div>
+        </div>
+        <div className='w-3/4'>测试3/4</div>
       </div>
     </div>
   );
