@@ -1,4 +1,5 @@
 import CurrentMonth from '../components/CurrentMonth';
+import MutiPieChart from '../components/MutilPieChart';
 import 'antd/dist/antd.css'
 import './style.less';
 
@@ -15,13 +16,12 @@ export default function HomePage() {
         </div>
       </div>
       <div className='content flex'>
-        <div className='w-1/4'>
+        <div className='w-2/5'>
           {/* 当前月销售额 */}
-          <div>
             <CurrentMonth />
-          </div>
+            <MutiPieChart />
         </div>
-        <div className='w-3/4'>测试3/4</div>
+        <div className='w-3/5'>测试3/4</div>
       </div>
     </div>
   );
