@@ -4,7 +4,8 @@ import './style.less';
 export default function TableChart(){
   return(
     <div className='table-container'>
-    <table className="table border-table darkblue" style={{ width: '100%' }} cellpadding={0} cellspacing={0}>
+    <table className="table border-table darkblue" style={{ width: '100%' }} cellPadding={0} cellSpacing={0}>
+      <thead>
       <tr>
         <td className="th" style={{ width: '90px' }}>排名</td>
         <td className="th">区域</td>
@@ -15,6 +16,8 @@ export default function TableChart(){
           月销售量
         </td>
       </tr>
+      </thead>
+      <tbody>
       {
         datalist.map((item, index) => (
           <tr key={item.id}>
@@ -30,7 +33,8 @@ export default function TableChart(){
             </td>
           </tr>
         ))
-      }                  
+      }     
+      </tbody>             
     </table>
     </div>
   )

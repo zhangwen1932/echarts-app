@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react';
 import { categoryClassifyData } from '../../data/mutilPieChart';
 import { formatLargeNumber } from '../../utils'; 
 import * as echarts from 'echarts';
-import { BulbFilled } from '@ant-design/icons';
 
 export default function MutiPieChart(){
   let multiChartRef = useRef();
