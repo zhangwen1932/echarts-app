@@ -1,6 +1,7 @@
 import CurrentMonth from '../components/CurrentMonth';
 import MutiPieChart from '../components/MutilPieChart';
 import TableChart from '../components/TableChart';
+import PieChart from '../components/PieChart';
 import 'antd/dist/antd.css'
 import './style.less';
 
@@ -22,6 +23,7 @@ export default function HomePage() {
             <CurrentMonth />
             <MutiPieChart />
             <TableChart />
+            <PieChart />
         </div>
         <div className='w-3/5'>测试3/4</div>
       </div>
