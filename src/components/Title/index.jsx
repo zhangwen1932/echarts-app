@@ -12,7 +12,7 @@ export default function Title() {
             end={totalSales}
             duration={2.75}
             separator=","
-                // decimal=","
+            // decimal=","
           />
           <small className="number warning">20.11%</small>
         </h2>
