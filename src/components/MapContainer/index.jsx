@@ -112,10 +112,11 @@ export default function MapContainer(){
       tooltip : {
         trigger: 'item'
       },
-      //布局e
+      //布局e  地图布局
       geo: {
+        zoom: 1.2,
         show: true,
-        map: 'china',
+        map: 'china',  // 使用registerMap注册的地图名称
         //  zoom: 1,  //地图绽放
         //  scaleLimit: 2,
         label: {
@@ -126,10 +127,10 @@ export default function MapContainer(){
             }
           },
           emphasis: {
-            show: false,
+            show: true,
           }
         },
-        roam: true,//是否开启鼠标缩放和平移漫游
+        roam: false,//是否开启鼠标缩放和平移漫游
         itemStyle: {
           normal: {
             areaColor: 'transparent',
@@ -138,11 +139,12 @@ export default function MapContainer(){
             shadowColor: 'rgba(63, 218, 255, 0.5)',
             shadowBlur: 30
           },
+          // 鼠标移入动态的时候显示的默认样式
           emphasis: {
             areaColor: '#2B91B7',
-            color: '#fff'
+            // color: '#000'
           }
-        }
+        }                                                                                                                                                  
       },
       //调整显示级别
       layoutCenter: ['25%', '50%'],  
@@ -150,7 +152,7 @@ export default function MapContainer(){
       series: [
         {
           name: '销售额',
-          type: 'scatter',
+          type: 'scatter',  // 散点气泡图
           coordinateSystem: 'geo',
           data: convertData2(provinceSale),
           symbolSize: function (val) {
@@ -176,7 +178,7 @@ export default function MapContainer(){
         },
         {
           name: '销售额前三名',
-          type: 'effectScatter',
+          type: 'effectScatter', // 带有涟漪特效动画的散点（气泡）图
           coordinateSystem: 'geo',
           data: convertData2(provinceSale.sort(function (a, b) {
             return b.value - a.value;
