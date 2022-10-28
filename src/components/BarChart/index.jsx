@@ -33,7 +33,7 @@ export default function BarChart(){
       xAxis: [
         {
           type: 'category',
-          gdata: monthArray,
+          data: monthArray,
           axisLabel: {
             textStyle: {
               color: '#fff'
