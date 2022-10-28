@@ -4,32 +4,25 @@ import { provinceSale, geoCoordMap } from '../../data/mapComponents';
 import { formatLargeNumber } from '../../utils';
 import * as echarts from 'echarts';
 
+
+const convertData2 = function (originData) {
+  const res = [];
+  const data=JSON.parse(JSON.stringify(originData));
+  for (let i = 0; i < data.length; i++) {
+      const geoCoord = geoCoordMap[data[i].name];
+      if (geoCoord) {
+          res.push({
+              name: data[i].name,
+              value: geoCoord.concat(parseInt(formatLargeNumber(data[i].value)))
+          });
+      }
+  }
+  return res;
+};
+
 export default function MapContainer(){
   const mapRef = useRef();
-  const convertData2 = function (originData) {
-    const res = [];
-    const data=JSON.parse(JSON.stringify(originData))
-    console.log('data', data);
-    // data.forEach((item, index) => {
-    //   const geoCoord = geoCoordMap[data[index].name];
-    //   if (geoCoord) {
-    //     res.push({
-    //         name: data[index].name,
-    //         value: geoCoord.concat(parseInt(formatLargeNumber(data[index].value)))
-    //     });
-    //   }
-    // })
-    for (let i = 0; i < data.length; i++) {
-        const geoCoord = geoCoordMap[data[i].name];
-        if (geoCoord) {
-            res.push({
-                name: data[i].name,
-                value: geoCoord.concat(parseInt(formatLargeNumber(data[i].value)))
-            });
-        }
-    }
-    return res;
-};
+  const saleData = [...provinceSale];
   useEffect(() => {
     echarts.registerMap('china', chinaJson);
     const map = echarts.init(mapRef.current);
@@ -180,7 +173,7 @@ export default function MapContainer(){
           name: '销售额前三名',
           type: 'effectScatter', // 带有涟漪特效动画的散点（气泡）图
           coordinateSystem: 'geo',
-          data: convertData2(provinceSale.sort(function (a, b) {
+          data: convertData2(saleData.sort(function (a, b) {
             return b.value - a.value;
           }).slice(0, 3)),
           symbolSize: function (val) {
@@ -253,7 +246,24 @@ export default function MapContainer(){
           data: [
             { type: 'max', name: '最大值' },
             { type: 'min', name: '最小值' }
-          ]
+          ],
+          label: {
+            color: '#fff',
+            // borderWidth: 2,
+            // backgroundColor: 'green',
+            // borderColor: 'yelllow',
+            textBorderColor: '#de7462',
+            textBorderWidth: 1,
+          },
+          // 鼠标移入时 相关数据高亮
+          // emphasis: {
+          //   label: {
+          //     color: 'green'
+          //   }
+          // }
+          itemStyle: {
+            color: '#de7462',
+          }
         },
         markLine : {
           data : [
