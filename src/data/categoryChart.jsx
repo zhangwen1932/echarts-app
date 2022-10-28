@@ -13,8 +13,7 @@ export const category = [{
 {
   "categoryid": "4",
   "category": "辅助用品"
-}
-];
+}];
 
 export const monthArray = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
 

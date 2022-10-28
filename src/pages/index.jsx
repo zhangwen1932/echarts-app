@@ -5,6 +5,7 @@ import PieChart from '../components/PieChart';
 import Title from '../components/Title';
 import MapContainer from '../components/MapContainer';
 import CategoryChart from '../components/CategoryChart';
+import BarChart from '../components/BarChart';
 import 'antd/dist/antd.css'
 import './style.less';
 
@@ -32,6 +33,7 @@ export default function HomePage() {
           <Title />
           <MapContainer />
           <CategoryChart />
+          <BarChart />
         </div>
       </div>
     </div>
