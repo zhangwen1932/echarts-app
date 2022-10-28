@@ -249,9 +249,6 @@ export default function MapContainer(){
           ],
           label: {
             color: '#fff',
-            // borderWidth: 2,
-            // backgroundColor: 'green',
-            // borderColor: 'yelllow',
             textBorderColor: '#de7462',
             textBorderWidth: 1,
           },
@@ -266,6 +263,10 @@ export default function MapContainer(){
           }
         },
         markLine : {
+          lineStyle: {
+            color: '#61a0a8',
+            width: 2,
+          },
           data : [
             {type : 'average', name : '平均值'}
           ]
