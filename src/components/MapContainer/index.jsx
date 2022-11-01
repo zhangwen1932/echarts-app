@@ -66,10 +66,10 @@ export default function MapContainer(){
         ],
         color: ['#9fb5ea','#F4E925','#85daef', '#74e2ca', '#e6ac53']
       },
-      //布局
+      // 布局  bar的位置 如果不设置 bar会跟地图重叠
       grid: [
         { x: '55%', y: '5%', width: '40%', height: '90%' },
-    //  { x: '50%', bottom: '5%', width: '40%', height: '25%' }
+        // { x: '10%', bottom: '5%', width: '40%', height: '80%' }
       ],
       xAxis: [{
         gridIndex: 0,
